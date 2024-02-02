@@ -22,7 +22,7 @@ export class Product {
     //dimensions de type Dimensions
     dimensions: Dimensions
 
-    constructor(productId = 1, name = "Shoes", weight = 38, price = 25, dimensions: Dimensions) {
+    constructor(productId: number, name: string, weight: number, price: number, dimensions: Dimensions) {
         this.productId = productId;
         this.name = name;
         this.weight = weight;
@@ -44,14 +44,23 @@ export class Product {
     }
 };
 
-class Clothing extends Product {
+//création de sous classes : clothingsize et shoesize
+export class Clothing extends Product {
+    // création de size de typer ClothingSize
      size: ClothingSize
+     //en paramètre du constructeur, nous reprenons tous les éléments de la class Product en y ajoutant la ClothingSize
     constructor(productId: number, name: string, price: number, weight: number, dimensions: Dimensions, size: ClothingSize) { 
+        // aprèsles récupérer, on les ajoute dans le constructeur. super() permet de rajouter les éléments de la classe parente, puis on ajoute dans le constructeur les éléments de la class enfante
         super(productId, name, price, weight, dimensions)
         this.size = size;
     }
 }
 
+//Même processus pour la sous class Shoes
 export class Shoes extends Product {
-    size: ShoeSize | undefined
+    size: ShoeSize
+    constructor(productId: number, name: string, price: number, weight: number, dimensions: Dimensions,size: ShoeSize) {
+        super(productId, name, price, weight, dimensions)
+        this.size = size
+    }
 }

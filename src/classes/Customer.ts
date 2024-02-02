@@ -21,7 +21,7 @@ export class Customer {
     name: string;
     email: string;
 
-    constructor(customerId = 1, name = 'karine', email = 'prenom@nom.com', address?: Address) {
+    constructor(customerId: number, name: string, email:string, address?: Address) {
         this.customerId = customerId;
         this.name = name;
         this.email = email;
@@ -45,3 +45,4 @@ export class Customer {
 
     }
 }
+

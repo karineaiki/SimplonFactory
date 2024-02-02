@@ -11,5 +11,3 @@ export enum ShoeSize {
     EU45 = 45,
     EU46 = 46
 }
-
-export default ShoeSize
