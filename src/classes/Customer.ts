@@ -30,7 +30,7 @@ export class Customer {
 
     // Méthode pour retourner les informations d'un client
     displayInfo() {
-        const customerInfo = `Customer ID : ${this.customerId}, Name : ${this.name}, Email : ${this.email}`
+        const customerInfo = `Customer ID : ${this.customerId}\n Name : ${this.name}\n Email : ${this.email} \n`
         const addressInfo = this.address ? this.displayAddress() : "No address found";
         return `${customerInfo}` + `${addressInfo}`
     };
@@ -38,7 +38,7 @@ export class Customer {
     displayAddress() {
         if (this.address) {
             const { street, postalCode, city, country } = this.address;
-            return `Address: ${street}, ${postalCode}, ${city}, ${country} `
+            return `Address: ${street}\n ${postalCode}\n ${city}\n ${country} \n`
         } else {
             return "No address found";
         }
